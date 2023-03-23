@@ -10,14 +10,17 @@ import { store } from 'src/redux/store';
 
 // STYLES
 import { theme } from 'src/utils/theme/theme';
+import { FetchContextProvider } from 'src/utils/hooks/fetch/fetchContext';
 
 export const Providers = ({ children }: { children: ReactNode }) => (
 	<>
 		<CssBaseline enableColorScheme />
 		<Provider store={store}>
-			<MuiThemeProvider theme={theme}>
-				<ThemeProvider theme={theme}>{children}</ThemeProvider>
-			</MuiThemeProvider>
+			<FetchContextProvider baseUrl={import.meta.env.VITE_API} token={import.meta.env.VITE_API_KEY}>
+				<MuiThemeProvider theme={theme}>
+					<ThemeProvider theme={theme}>{children}</ThemeProvider>
+				</MuiThemeProvider>
+			</FetchContextProvider>
 		</Provider>
 	</>
 );
