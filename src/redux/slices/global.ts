@@ -1,28 +1,28 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { RootState } from 'src/redux/store';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from "src/redux/store";
 
-interface InitialStateInterface {
-	sectionName: string | null,
-	
+export interface InitialGlobalStateInterface {
+  listStyle: "card" | "list";
 }
 
-const initialState: InitialStateInterface = {
-	sectionName: null,
+const initialState: InitialGlobalStateInterface = {
+  listStyle: "card",
 };
 
 export const globalSlice = createSlice({
-	name: 'global',
-	initialState,
-	reducers: {
-		globalSetSectionName: (state, action: PayloadAction< string | null>) => {
-			state.sectionName = action.payload;
-		},
-	},
+  name: "global",
+  initialState,
+  reducers: {
+    globalSetListStyle: (
+      state,
+      action: PayloadAction<InitialGlobalStateInterface["listStyle"]>
+    ) => {
+      state.listStyle = action.payload;
+    },
+  },
 });
 
-export const {
-	globalSetSectionName,
-} = globalSlice.actions;
+export const { globalSetListStyle } = globalSlice.actions;
 
 export const selectGlobal = (state: RootState) => state.global;
 

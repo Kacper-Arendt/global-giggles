@@ -45,11 +45,13 @@
   },
   "rules": {
     "linebreak-style": "off",
+    "import/newline-after-import": ["error", { "count": 1 }],
+
     // Configure prettier
     "prettier/prettier": [
       "error",
       {
-        "printWidth": 80,
+        "printWidth": 120,
         "endOfLine": "lf",
         "singleQuote": true,
         "tabWidth": 2,
@@ -58,8 +60,6 @@
         "trailingComma": "es5"
       }
     ],
-    // Disallow the `any` type.
-    "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/ban-types": [
       "error",
       {
@@ -73,6 +73,9 @@
     // Enforce the use of the shorthand syntax.
     "object-shorthand": "error",
     "no-console": "warn",
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+
   }
 }
