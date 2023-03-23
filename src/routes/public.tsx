@@ -1,5 +1,5 @@
 import { Dashboard } from 'src/components/dashboard';
-import { MainLayout } from 'src/coreUi/layouts';
+import { MainLayout } from 'src/layouts';
 
 export const publicRoutes = [
 	{

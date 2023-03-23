@@ -1,81 +1,81 @@
 {
+  "extends": ["airbnb", "airbnb-typescript", "prettier"],
+  "plugins": ["prettier"],
   "env": {
+    "jest": true,
+    "node": true,
     "browser": true,
-    "es6": true
+    "es2021": true
   },
-  "extends": [
-    "eslint:recommended",
-    "airbnb/hooks",
-    "airbnb-typescript",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:prettier/recommended",
-    "plugin:import/recommended"
-  ],
-  // Specifying Parser
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module",
-    "tsconfigRootDir": ".",
-    "project": [
-      "./tsconfig.json"
-    ]
+    "project": "./tsconfig.json"
   },
-  // Configuring third-party plugins
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
-  // Resolve imports
-  "settings": {
-    "import/resolver": {
-      "typescript": {
-        "project": "./tsconfig.json"
-      }
-    },
-    "react": {
-      "version": "18.x"
-    }
+  "globals": {
+    "document": true,
+    "window": true
   },
   "rules": {
-    "linebreak-style": "off",
-    "import/newline-after-import": ["error", { "count": 1 }],
+    // =========================
+    // --> turn the rule off <--
+    // =========================
+    "react/react-in-jsx-scope": 0, // React 17+ provide support for a new version of the JSX transform
+    "react/require-default-props": 0, // defaultProps => object default values
+    "import/prefer-default-export": 0,
+    "react/jsx-no-useless-fragment": 0,
+    "no-param-reassign": 0, // redux toolkit - linting state mutations
+    "react/no-danger": 0,
+    // =====================================
+    // --> turn the rule on as a warning <--
+    // =====================================
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".ts", ".tsx"]
+      }
+    ],
+    // ====================================
+    // --> turn the rule on as an error <--
+    // ====================================
 
-    // Configure prettier
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ], // This rule is aimed to enforce consistent function types for function components.
     "prettier/prettier": [
-      "error",
+      2,
       {
-        "printWidth": 120,
-        "endOfLine": "lf",
-        "singleQuote": true,
-        "tabWidth": 2,
-        "indentStyle": "space",
-        "useTabs": true,
-        "trailingComma": "es5"
+        "endOfLine": "auto"
       }
     ],
-    "@typescript-eslint/ban-types": [
-      "error",
+    "react/no-unstable-nested-components": [
+      2,
       {
-        "extendDefaults": true,
-        "types": {
-          "{}": false
-        }
+        "allowAsProps": true
       }
     ],
-    "react-hooks/exhaustive-deps": "off",
-    // Enforce the use of the shorthand syntax.
-    "object-shorthand": "error",
-    "no-console": "warn",
-    "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-floating-promises": "off",
-    "@typescript-eslint/no-explicit-any": "off"
-
-  }
+    "react/jsx-props-no-spreading": [
+      2,
+      {
+        "html": "ignore",
+        "custom": "ignore",
+        "explicitSpread": "ignore",
+        "exceptions": [""]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": "", 
+      "rules": {} 
+    },
+    {
+      "files": ["**/*.stories.*"],
+      "rules": {
+        "import/no-anonymous-default-export": 0,
+        "react/jsx-props-no-spreading": 0
+      }
+    }
+  ]
 }

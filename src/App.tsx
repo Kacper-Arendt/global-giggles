@@ -9,8 +9,10 @@ import { Providers } from 'src/providers';
 // ROUTES
 import { useRoutes } from 'src/routes';
 
-const App = () => <Providers>
-	<RouterProvider router={createBrowserRouter(useRoutes())} />
-</Providers>;
+const App = () => (
+	<Providers>
+		<RouterProvider router={createBrowserRouter(useRoutes())} />
+	</Providers>
+);
 
 export default App;
