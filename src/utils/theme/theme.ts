@@ -30,6 +30,10 @@ declare module '@mui/material/styles' {
 			secondary: {
 				main: string;
 			};
+			text: {
+				primary: string;
+				secondary: string;
+			};
 			background: {
 				default: string;
 				paper: string;
@@ -47,6 +51,10 @@ declare module '@emotion/react' {
 			};
 			secondary: {
 				main: string;
+			};
+			text: {
+				primary: string;
+				secondary: string;
 			};
 			background: {
 				default: string;

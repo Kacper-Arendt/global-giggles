@@ -1,5 +1,7 @@
 {
   "submit": "Submit",
   "loading": "Loading",
-  "read": "Read"
+  "read": "Read",
+  "time": "Time",
+  "totalArticles": "Total articles"
 }

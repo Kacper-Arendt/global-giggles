@@ -1,5 +1,7 @@
 {
   "submit": "Zatwierdź",
   "loading": "Ładowanie",
-  "read": "Przeczytaj"
+  "read": "Przeczytaj",
+  "time": "Czas",
+  "totalArticles": "Wszystkie artykuły"
 }
