@@ -12,7 +12,7 @@ const StyledMainLayout = styled(Box)`
 		'aside footer';
 	grid-template-columns: 13rem 1fr;
 	grid-template-rows: 4rem 1fr 4rem;
-	min-height: 100vh;
+	height: 100vh;
 	background-color: ${({ theme }) => theme.palette.background.default};
 `;
 

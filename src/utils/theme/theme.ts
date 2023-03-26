@@ -4,14 +4,18 @@ export const theme = createTheme({
 	palette: {
 		mode: 'dark',
 		primary: {
-			main: '#5f5cff',
+			main: 'hsl(241,100%,68%)',
 		},
 		secondary: {
-			main: '#ff69b4',
+			main: 'hsl(330,100%,71%)',
+		},
+		text: {
+			primary: 'hsl(0,0%,100%)',
+			secondary: 'hsl(207,28%,69%)',
 		},
 		background: {
-			default: '#1A202C',
-			paper: '#364153',
+			default: 'hsl(220,26%,14%)',
+			paper: 'hsl(217,21%,27%)',
 		},
 	},
 });

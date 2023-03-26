@@ -4,15 +4,12 @@ import { ErrorBoundary } from 'react-error-boundary';
 // HOOKS
 import { useDashboard } from 'src/components/dashboard/hooks/useDashboard';
 
-// MODELS
-
 // COMPONENTS
 import { NewsList } from 'src/components/dashboard/sections';
-
-// STYLES
+import { Loader } from 'src/coreUi/common';
 
 export const Dashboard = () => {
-	const { fetchNews } = useDashboard();
+	const { fetchNews, loading } = useDashboard();
 
 	useEffect(() => {
 		fetchNews();
@@ -20,9 +17,7 @@ export const Dashboard = () => {
 
 	return (
 		<ErrorBoundary FallbackComponent={() => null}>
-			<ErrorBoundary FallbackComponent={() => null}>
-				<NewsList />
-			</ErrorBoundary>
+			<ErrorBoundary FallbackComponent={() => null}>{loading ? <Loader showInContainer /> : <NewsList />}</ErrorBoundary>
 		</ErrorBoundary>
 	);
 };
