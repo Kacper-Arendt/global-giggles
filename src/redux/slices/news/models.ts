@@ -1,9 +1,12 @@
 export interface InitialNewsStateInterface {
 	totalResults: number;
-	articles: Article[];
+	allArticles: Article[];
 }
 
-export interface InitialStatePayloadInterface extends Pick<InitialNewsStateInterface, 'totalResults' | 'articles'> {}
+export interface InitialStatePayloadInterface {
+	totalResults: number;
+	articles: Article[];
+}
 
 export interface Article {
 	author: string;
@@ -18,3 +21,7 @@ export interface Article {
 		name: string;
 	};
 }
+
+export const possibleCountries = ['pl', 'ar', 'de', 'en', 'es', 'fr', 'it', 'nl', 'no', 'pt', 'ru', 'sv'] as const;
+
+export type PossibleCountriesType = typeof possibleCountries[number];

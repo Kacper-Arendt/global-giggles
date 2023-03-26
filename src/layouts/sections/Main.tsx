@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
-const StyledMainWrapper = styled(Box)`
+const StyledMainWrapper = styled('main')`
 	grid-area: main;
 	padding: 1rem;
 	display: flex;

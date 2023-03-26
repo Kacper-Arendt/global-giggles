@@ -18,13 +18,13 @@ const StyledBox = styled(Box)`
 `;
 
 export const NewsList = () => {
-	const { articles } = useAppSelector(selectNews);
+	const { allArticles } = useAppSelector(selectNews);
 	const { listStyle } = useAppSelector(selectGlobal);
 
 	return (
 		<ErrorBoundary FallbackComponent={() => null}>
 			<StyledBox>
-				{articles?.map((article) => (
+				{allArticles?.map((article) => (
 					<ErrorBoundary FallbackComponent={() => null} key={article?.url}>
 						<NewsListItem variant={listStyle} article={article} />
 					</ErrorBoundary>

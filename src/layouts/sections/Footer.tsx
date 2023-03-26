@@ -1,12 +1,13 @@
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import { useCurrentHoursAndMinutes } from 'src/utils/hooks/useCurrentTime';
 import { t } from 'i18next';
+import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+
+// HOOKS
+import { useCurrentHoursAndMinutes } from 'src/utils/hooks/useCurrentTime';
 import { useAppSelector } from 'src/redux/hooks';
 import { selectNews } from 'src/redux/slices/news';
 
-const StyledFooter = styled(Box)`
+const StyledFooter = styled('footer')`
 	grid-area: footer;
 
 	display: flex;
@@ -21,8 +22,8 @@ const StyledFooter = styled(Box)`
 
 export const Footer = () => {
 	const currentTime = useCurrentHoursAndMinutes();
-	const { articles } = useAppSelector(selectNews);
-	const articlesCount = articles?.length;
+	const { allArticles } = useAppSelector(selectNews);
+	const articlesCount = allArticles?.length;
 
 	return (
 		<StyledFooter>

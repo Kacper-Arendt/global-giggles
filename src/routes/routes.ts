@@ -1,6 +1,8 @@
 export const routes = {
 	dashboard: {
 		short: 'dashboard',
-		full: 'dashboard',
+	},
+	country: {
+		short: 'country/:id',
 	},
 };

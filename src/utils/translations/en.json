@@ -3,5 +3,6 @@
   "loading": "Loading",
   "read": "Read",
   "time": "Time",
-  "totalArticles": "Total articles"
+  "totalArticles": "Total articles",
+  "browseNewsForSpecificCountry": "Browse news from a specific country"
 }

@@ -6,7 +6,7 @@ import { InitialNewsStateInterface, InitialStatePayloadInterface } from 'src/red
 
 const initialState: InitialNewsStateInterface = {
 	totalResults: 0,
-	articles: [],
+	allArticles: [],
 };
 
 export const newsSlice = createSlice({
@@ -14,7 +14,7 @@ export const newsSlice = createSlice({
 	initialState,
 	reducers: {
 		setInitialNewsData: (state, action: PayloadAction<InitialStatePayloadInterface>) => {
-			state.articles = action.payload.articles;
+			state.allArticles = action.payload.articles;
 			state.totalResults = action.payload.totalResults;
 		},
 	},
