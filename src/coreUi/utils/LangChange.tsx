@@ -43,11 +43,11 @@ export const LangChange = () => {
 				value={[getTranslatedLang({ lang: currentLang })]}
 				onChange={handleChange}
 				input={<OutlinedInput label="langSelect" />}
-				renderValue={(selected) => selected}
+				renderValue={(selected) => capitalize(selected[0])}
 			>
 				{langs.map(({ id, value }) => (
 					<MenuItem key={id} value={value} selected={value === currentLang}>
-						<Avatar alt={value} src={flagUrl(id)} variant="rounded" sx={{ width: 24, height: 20 }}>
+						<Avatar alt={value} src={flagUrl(id)} variant="rounded" sx={{ width: 24, height: 20, marginRight: '8px' }}>
 							{value}
 						</Avatar>
 						<ListItemText primary={capitalize(value)} />

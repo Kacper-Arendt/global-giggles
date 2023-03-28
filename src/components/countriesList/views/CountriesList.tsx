@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { generatePath, useNavigate } from 'react-router-dom';
+import { generatePath, useNavigate, useParams } from 'react-router-dom';
 
 // MATERIAL
 import List from '@mui/material/List';
@@ -10,10 +10,11 @@ import { possibleCountries } from 'src/redux/slices/news/models';
 import { routes } from 'src/routes/routes';
 
 // COMPONENTS
-import { CountryListItem } from 'src/components/countries/sections/CountryListItem';
+import { CountryListItem } from 'src/components/countriesList/sections/CountryListItem';
 import { useTranslation } from 'react-i18next';
 
 export const CountriesList = () => {
+	const { id } = useParams();
 	const navigate = useNavigate();
 	const { t } = useTranslation();
 
@@ -33,7 +34,7 @@ export const CountriesList = () => {
 					key={country}
 					country={country}
 					onClick={() => navigate(generatePath(routes.country.short, { id: country }))}
-					selected={country === 'en'}
+					selected={country === id}
 				/>
 			))}
 		</List>

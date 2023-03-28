@@ -1,5 +1,12 @@
-import { Dashboard } from 'src/components/dashboard';
+// LAYOUT
 import { MainLayout } from 'src/layouts';
+
+// ROUTES
+import { routes } from 'src/routes/routes';
+
+// COMPONENTS
+import { News } from 'src/components/news';
+import { Country } from 'src/components/country';
 
 export const publicRoutes = [
 	{
@@ -8,7 +15,11 @@ export const publicRoutes = [
 		children: [
 			{
 				index: true,
-				element: <Dashboard />,
+				element: <News />,
+			},
+			{
+				path: routes.country.short,
+				element: <Country />,
 			},
 		],
 	},

@@ -5,7 +5,7 @@ export type OptionsInterface = AxiosRequestConfig;
 
 export const useFetch = <T = unknown>() => {
 	const [loading, setLoading] = useState(false);
-	const { signal } = new AbortController();
+	const controller = new AbortController();
 
 	const fetchFn = async ({
 		options,
@@ -20,7 +20,7 @@ export const useFetch = <T = unknown>() => {
 			setLoading(true);
 			const res: AxiosResponse<T> = await axios({
 				...options,
-				signal,
+				signal: controller.signal,
 			});
 
 			if (onFinish) onFinish(res.data);
@@ -31,5 +31,5 @@ export const useFetch = <T = unknown>() => {
 		}
 	};
 
-	return { signal, loading, fetchFn };
+	return { controller, loading, setLoading, fetchFn };
 };

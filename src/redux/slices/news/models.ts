@@ -1,10 +1,16 @@
 export interface InitialNewsStateInterface {
 	totalResults: number;
 	allArticles: Article[];
+	countryArticles: { [key in PossibleCountriesType]: Article[] } | {};
 }
 
 export interface InitialStatePayloadInterface {
 	totalResults: number;
+	articles: Article[];
+}
+
+export interface CountryNewInterface {
+	country: PossibleCountriesType;
 	articles: Article[];
 }
 

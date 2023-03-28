@@ -15,7 +15,7 @@ const fetchContext = ({ baseUrl, token }: ConfigInterface) => {
 
 	axios.interceptors.request.use(
 		(config) => {
-			config.params = { q: 'e', ...config.params, apiKey: token };
+			config.params = { ...config.params, apiKey: token };
 			return config;
 		},
 		(error) => Promise.reject(error),

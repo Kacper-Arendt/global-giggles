@@ -6,7 +6,7 @@ import { setInitialNewsData } from 'src/redux/slices/news';
 // MODELS
 import { InitialStatePayloadInterface } from 'src/redux/slices/news/models';
 
-export const useDashboard = () => {
+export const useNews = () => {
 	const { fetchFn, loading } = useFetch<InitialStatePayloadInterface>();
 	const dispatch = useAppDispatch();
 
@@ -15,7 +15,8 @@ export const useDashboard = () => {
 
 		const onFinish = (data: InitialStatePayloadInterface) => dispatch(setInitialNewsData(data));
 
-		fetchFn({ options: { method: 'GET' }, onFinish, onError });
+		// q is required
+		fetchFn({ options: { method: 'GET', params: { q: 'e' } }, onFinish, onError });
 	};
 
 	return { fetchNews, loading };

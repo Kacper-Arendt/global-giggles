@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import { useTranslation } from 'react-i18next';
 
 // MODELS
-import { NewsListItemInterface } from 'src/coreUi/dataDisplay/news/views/NewsListItem';
+import { NewsListItemInterface } from 'src/coreUi/dataDisplay/news/sections/NewsListItem';
 
 export const CardItem = ({ article: { urlToImage, title, description } }: { article: NewsListItemInterface['article'] }) => {
 	const { t } = useTranslation();

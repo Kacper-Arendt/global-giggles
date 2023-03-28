@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
 // COMPONENTS
-import { CountriesList } from 'src/components/countries';
+import { CountriesList } from 'src/components/countriesList';
 import { LangChange } from 'src/coreUi/utils';
 
 const StyledAside = styled(Box)`

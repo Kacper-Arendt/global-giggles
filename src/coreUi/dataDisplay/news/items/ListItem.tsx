@@ -8,7 +8,7 @@ import NewspaperIcon from '@mui/icons-material/Newspaper';
 import { ErrorBoundary } from 'react-error-boundary';
 
 // MODELS
-import { NewsListItemInterface } from 'src/coreUi/dataDisplay/news/views/NewsListItem';
+import { NewsListItemInterface } from 'src/coreUi/dataDisplay/news/sections/NewsListItem';
 
 export const ListItem = ({ article: { author, urlToImage, title } }: { article: NewsListItemInterface['article'] }) => (
 	<ErrorBoundary FallbackComponent={() => null}>
