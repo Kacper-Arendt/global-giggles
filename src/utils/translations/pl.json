@@ -1,8 +1,11 @@
 {
-  "submit": "Zatwierdź",
-  "loading": "Ładowanie",
-  "read": "Przeczytaj",
-  "time": "Czas",
-  "totalArticles": "Wszystkie artykuły",
-  "browseNewsForSpecificCountry": "Przeglądaj wiadomości z danego kraju"
+	"general": {
+		"submit": "Zatwierdź",
+		"loading": "Ładowanie",
+		"read": "Przeczytaj",
+		"time": "Czas",
+		"totalArticles": "Wszystkie artykuły",
+		"browseNewsForSpecificCountry": "Przeglądaj wiadomości z danego kraju",
+		"language": "Język"
+	}
 }

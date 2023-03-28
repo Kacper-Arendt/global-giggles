@@ -1,4 +1,6 @@
 import i18next from 'i18next';
+
+// MATERIAL
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import ListItemText from '@mui/material/ListItemText';
@@ -7,6 +9,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 
 // HOOKS
 import { useTranslatedLang } from 'src/utils/hooks/useTranslatedLang';
+
+// HELPERs
+import { capitalize } from 'src/utils/helpers/string';
 
 interface CountryListItemInterface {
 	country: string;
@@ -17,7 +22,8 @@ interface CountryListItemInterface {
 export const CountryListItem = ({ country, selected, onClick }: CountryListItemInterface) => {
 	const flagUrl = `${import.meta.env.VITE_FLAG_API}/${country === 'en' ? 'gb' : country}.png`;
 	const currentLang = i18next.language;
-	const translatedLang = useTranslatedLang({ lang: country, translateTo: currentLang });
+	const { getTranslatedLang } = useTranslatedLang();
+	const translatedLang = getTranslatedLang({ lang: country, translateTo: currentLang });
 
 	return (
 		<ListItem key={country} disablePadding>
@@ -27,7 +33,7 @@ export const CountryListItem = ({ country, selected, onClick }: CountryListItemI
 						{country}
 					</Avatar>
 				</ListItemAvatar>
-				<ListItemText primary={translatedLang} />
+				<ListItemText primary={capitalize(translatedLang)} />
 			</ListItemButton>
 		</ListItem>
 	);

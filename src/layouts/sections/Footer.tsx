@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
@@ -24,14 +24,15 @@ export const Footer = () => {
 	const currentTime = useCurrentHoursAndMinutes();
 	const { allArticles } = useAppSelector(selectNews);
 	const articlesCount = allArticles?.length;
+	const { t } = useTranslation();
 
 	return (
 		<StyledFooter>
 			<Typography variant="subtitle2">
-				{t('totalArticles')}: {articlesCount}
+				{t('general.totalArticles')}: {articlesCount}
 			</Typography>
 			<Typography variant="subtitle2">
-				{t('time')}: {currentTime}
+				{t('general.time')}: {currentTime}
 			</Typography>
 		</StyledFooter>
 	);

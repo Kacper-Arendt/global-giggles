@@ -1,4 +1,6 @@
-import { init, t } from 'i18next';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 // TRANSLATIONS
 import en from 'src/utils/translations/en.json';
@@ -11,18 +13,20 @@ declare module 'i18next' {
 }
 
 export const resources = {
-	en: { translation: { ...en } },
-	pl: { translation: { ...pl } },
+	en: { translation: en },
+	pl: { translation: pl },
 };
 
-const init18n = async () =>
-	init({
-		lng: 'en',
-		debug: false,
+i18n
+	.use(initReactI18next)
+	.use(LanguageDetector)
+	.init({
 		resources,
+		debug: false,
+		fallbackLng: 'en',
+		interpolation: {
+			escapeValue: false,
+		},
 	});
 
-init18n();
-
-const output = document.getElementById('output');
-if (output) output.innerHTML = t('key' as any);
+export default i18n;

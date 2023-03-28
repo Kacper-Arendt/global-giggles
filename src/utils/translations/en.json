@@ -1,8 +1,11 @@
 {
-  "submit": "Submit",
-  "loading": "Loading",
-  "read": "Read",
-  "time": "Time",
-  "totalArticles": "Total articles",
-  "browseNewsForSpecificCountry": "Browse news from a specific country"
+	"general": {
+		"submit": "Submit",
+		"loading": "Loading",
+		"read": "Read",
+		"time": "Time",
+		"totalArticles": "Total articles",
+		"browseNewsForSpecificCountry": "Browse news from a specific country",
+		"language": "Language"
+	}
 }

@@ -1,7 +1,5 @@
-import { useCallback } from 'react';
-
-export const useTranslatedLang = ({ lang, translateTo }: { lang: string; translateTo?: string }) => {
-	const getTranslatedLang = useCallback(() => {
+export const useTranslatedLang = () => {
+	const getTranslatedLang = ({ lang, translateTo }: { lang: string; translateTo?: string }) => {
 		try {
 			if (lang || translateTo) {
 				// RETURNS TRANSLATED LANGUAGE e.g. pl. -> Polski, en -> English
@@ -15,8 +13,8 @@ export const useTranslatedLang = ({ lang, translateTo }: { lang: string; transla
 			console.log(e); // eslint-disable-line
 		}
 
-		return null;
-	}, [lang]);
+		return lang;
+	};
 
-	return getTranslatedLang();
+	return { getTranslatedLang };
 };
