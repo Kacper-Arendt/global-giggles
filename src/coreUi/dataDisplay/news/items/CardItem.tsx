@@ -1,3 +1,4 @@
+// MATERIAL
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
@@ -5,16 +6,36 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 import { useTranslation } from 'react-i18next';
+import { styled } from '@mui/material/styles';
 
 // MODELS
 import { NewsListItemInterface } from 'src/coreUi/dataDisplay/news/sections/NewsListItem';
+
+// COMPONENTS
+import { ImageFallback } from 'src/coreUi/common';
+
+const StyledCard = styled(Card)`
+	display: flex;
+	flex-direction: column;
+	max-width: 21.5rem;
+	border-radius: 0.5rem;
+`;
+
+const StyledCardActions = styled(CardActions)`
+	margin-top: auto;
+	margin-left: auto;
+`;
 
 export const CardItem = ({ article: { urlToImage, title, description } }: { article: NewsListItemInterface['article'] }) => {
 	const { t } = useTranslation();
 
 	return (
-		<Card sx={{ maxWidth: 345, borderRadius: '0.5rem' }}>
-			<CardMedia component="img" height="174" image={urlToImage} alt={title} />
+		<StyledCard>
+			{urlToImage ? (
+				<CardMedia component="img" height="174" image={urlToImage} alt={title} />
+			) : (
+				<ImageFallback height="174px" />
+			)}
 			<CardContent>
 				<Typography gutterBottom variant="h5" component="div">
 					{title}
@@ -23,11 +44,11 @@ export const CardItem = ({ article: { urlToImage, title, description } }: { arti
 					{description}
 				</Typography>
 			</CardContent>
-			<CardActions>
-				<Button size="small" color="primary" variant="contained" sx={{ marginLeft: 'auto' }}>
+			<StyledCardActions>
+				<Button size="small" color="primary" variant="contained">
 					{t('general.read')}
 				</Button>
-			</CardActions>
-		</Card>
+			</StyledCardActions>
+		</StyledCard>
 	);
 };

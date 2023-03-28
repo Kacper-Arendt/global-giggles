@@ -25,7 +25,7 @@ export const useFetch = <T = unknown>() => {
 
 			if (onFinish) onFinish(res.data);
 		} catch (error: any) {
-			if (onError) onError(error);
+			if (!axios.isCancel(error) && onError) onError(error);
 		} finally {
 			setLoading(false);
 		}
