@@ -3,6 +3,7 @@ import { Link, Stack } from '@mui/material';
 
 // COMPONENTS
 import { ListStyle } from 'src/layouts/items';
+import { LangChange } from 'src/coreUi/utils';
 
 export const Header = () => (
 	<Stack
@@ -13,13 +14,13 @@ export const Header = () => (
 			gridArea: 'header',
 		}}
 		direction="row"
-		justifyContent="space-between"
 		alignItems="center"
-		spacing={2}
+		spacing={1.5}
 	>
-		<Link component={RouterLink} to="/" underline="none" variant="h5" color="secondary.main">
+		<Link component={RouterLink} to="/" underline="none" variant="h5" color="secondary.main" sx={{ marginRight: 'auto' }}>
 			Global Giggles
 		</Link>
+		<LangChange />
 		<ListStyle />
 	</Stack>
 );
