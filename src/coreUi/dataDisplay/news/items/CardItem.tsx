@@ -26,7 +26,9 @@ const StyledCardActions = styled(CardActions)`
 	margin-left: auto;
 `;
 
-export const CardItem = ({ article: { urlToImage, title, description } }: { article: NewsListItemInterface['article'] }) => {
+type ListItemType = Pick<NewsListItemInterface, 'article' | 'onClick'>;
+
+export const CardItem = ({ article: { urlToImage, title, description }, onClick }: ListItemType) => {
 	const { t } = useTranslation();
 
 	return (
@@ -37,7 +39,7 @@ export const CardItem = ({ article: { urlToImage, title, description } }: { arti
 				<ImageFallback height="174px" />
 			)}
 			<CardContent>
-				<Typography gutterBottom variant="h5" component="div">
+				<Typography gutterBottom variant="subtitle1" sx={{ lineHeight: '1.4rem' }} color="text.primary">
 					{title}
 				</Typography>
 				<Typography variant="body2" color="text.secondary">
@@ -45,7 +47,7 @@ export const CardItem = ({ article: { urlToImage, title, description } }: { arti
 				</Typography>
 			</CardContent>
 			<StyledCardActions>
-				<Button size="small" color="primary" variant="contained">
+				<Button size="small" color="primary" variant="contained" onClick={onClick}>
 					{t('general.read')}
 				</Button>
 			</StyledCardActions>

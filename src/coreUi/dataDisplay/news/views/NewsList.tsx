@@ -10,6 +10,8 @@ import { InitialGlobalStateInterface } from 'src/redux/slices/global';
 
 // COMPONENTS
 import { NewsListItem } from 'src/coreUi/dataDisplay/news/sections/NewsListItem';
+import { useState } from 'react';
+import { ModalItem } from 'src/coreUi/dataDisplay/news/items/ModalItem';
 
 const StyledBox = styled(Box)`
 	display: flex;
@@ -23,14 +25,20 @@ interface NewsListInterface {
 	variant: InitialGlobalStateInterface['listStyle'];
 }
 
-export const NewsList = ({ variant, articles }: NewsListInterface) => (
-	<ErrorBoundary FallbackComponent={() => null}>
-		<StyledBox>
-			{articles?.map((article) => (
-				<ErrorBoundary FallbackComponent={() => null} key={article?.url}>
-					<NewsListItem variant={variant} article={article} />
-				</ErrorBoundary>
-			))}
-		</StyledBox>
-	</ErrorBoundary>
-);
+export const NewsList = ({ variant, articles }: NewsListInterface) => {
+	const [item, setItem] = useState<null | Article>(null);
+
+	return (
+		<ErrorBoundary FallbackComponent={() => null}>
+			{item && <ModalItem article={item} isOpen handleClose={() => setItem(null)} />}
+
+			<StyledBox>
+				{articles?.map((article) => (
+					<ErrorBoundary FallbackComponent={() => null} key={article?.url}>
+						<NewsListItem variant={variant} article={article} onClick={() => setItem(article)} />
+					</ErrorBoundary>
+				))}
+			</StyledBox>
+		</ErrorBoundary>
+	);
+};

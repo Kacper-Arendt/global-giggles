@@ -11,10 +11,15 @@ import { CardItem } from 'src/coreUi/dataDisplay/news/items';
 export interface NewsListItemInterface {
 	variant?: InitialGlobalStateInterface['listStyle'];
 	article: Article;
+	onClick: () => void;
 }
 
-export const NewsListItem = ({ variant, article }: NewsListItemInterface) => (
+export const NewsListItem = ({ variant, article, onClick }: NewsListItemInterface) => (
 	<ErrorBoundary FallbackComponent={() => null}>
-		{variant === 'list' ? <ListItem article={article} /> : <CardItem article={article} />}
+		{variant === 'list' ? (
+			<ListItem article={article} onClick={onClick} />
+		) : (
+			<CardItem article={article} onClick={onClick} />
+		)}
 	</ErrorBoundary>
 );

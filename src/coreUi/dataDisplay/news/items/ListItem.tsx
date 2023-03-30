@@ -10,7 +10,9 @@ import { ErrorBoundary } from 'react-error-boundary';
 // MODELS
 import { NewsListItemInterface } from 'src/coreUi/dataDisplay/news/sections/NewsListItem';
 
-export const ListItem = ({ article: { author, urlToImage, title } }: { article: NewsListItemInterface['article'] }) => (
+type ListItemType = Pick<NewsListItemInterface, 'article' | 'onClick'>;
+
+export const ListItem = ({ article: { author, urlToImage, title }, onClick }: ListItemType) => (
 	<ErrorBoundary FallbackComponent={() => null}>
 		<MaterialListItem
 			sx={{
@@ -25,6 +27,7 @@ export const ListItem = ({ article: { author, urlToImage, title } }: { article: 
 					borderRadius: 2,
 					padding: '10px',
 				}}
+				onClick={onClick}
 			>
 				<ListItemAvatar>
 					<Avatar alt={title} src={urlToImage} variant="square">
