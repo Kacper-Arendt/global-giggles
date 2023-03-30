@@ -28,6 +28,6 @@ export interface Article {
 	};
 }
 
-export const possibleCountries = ['pl', 'ar', 'de', 'en', 'es', 'fr', 'it', 'nl', 'no', 'pt', 'ru', 'sv'] as const;
+export const possibleCountries = ['pl', 'ar', 'de', 'en', 'es', 'fr', 'it', 'nl', 'no', 'pt', 'sv'] as const;
 
 export type PossibleCountriesType = typeof possibleCountries[number];
