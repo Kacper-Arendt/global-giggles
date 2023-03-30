@@ -2,7 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Link, Stack } from '@mui/material';
 
 // COMPONENTS
-import { ListStyle } from 'src/layouts/items';
+import { HeaderPopover, ListStyle } from 'src/layouts/items';
 import { LangChange } from 'src/coreUi/utils';
 
 export const Header = () => (
@@ -20,6 +20,8 @@ export const Header = () => (
 		<Link component={RouterLink} to="/" underline="none" variant="h5" color="secondary.main" sx={{ marginRight: 'auto' }}>
 			Global Giggles
 		</Link>
+
+		<HeaderPopover />
 		<LangChange />
 		<ListStyle />
 	</Stack>

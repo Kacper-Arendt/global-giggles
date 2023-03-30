@@ -7,6 +7,9 @@
 		"time": "Czas",
 		"totalArticles": "Wszystkie artykuły",
 		"browseNewsForSpecificCountry": "Przeglądaj wiadomości z danego kraju",
-		"language": "Język"
+		"language": "Język",
+		"clickMe": "Kliknij mnie",
+		"difficulty": "Rzecz, która najbardziej mnie spowolniła to Material UI, zbyt dużo siedzę w styled components. MUI to świetna biblioteka z bardzo dobrą dokumentacją. Jednakże, gdybym teraz miał dokonać wyboru, prawdopodobnie skorzystałbym z biblioteki w stylu Headless UI.",
+		"fun": "Największą frajdę sprawiło mi samo tworzenie projektu. Dla mnie koniec marca nie oznacza koniec tego projektu, ponieważ będę chciał go używać jako sandboxa. Na pewno zacznę od wejścia w SSR i Next.js"
 	}
 }

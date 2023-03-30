@@ -7,6 +7,9 @@
 		"time": "Time",
 		"totalArticles": "Total articles",
 		"browseNewsForSpecificCountry": "Browse news from a specific country",
-		"language": "Language"
+		"language": "Language",
+		"clickMe": "Click me",
+		"difficulty": "The thing that slowed me down the most was Material UI, I'm into styled components too much. MUI is a great library with very good documentation. However, if I had to make a choice now, I'd probably go with a Headless UI style library.",
+		"fun": "I had the most fun creating the project. For me, the end of March does not mean the end of this project, because I will want to use it as a sandbox. I will definitely start with getting into SSR and Next.js"
 	}
 }
